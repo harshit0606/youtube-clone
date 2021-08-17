@@ -3,7 +3,7 @@ import "./SidebarRow.css"
 
 function SidebarRow(props) {
     return (
-        <div className="sidebar_row">
+        <div className={`sidebar_row ${props.selected && "selected"}`}>
             <props.icon className="sidebarRow_icon"/>
             <h2 className="sidebarRow_title">{props.title}</h2>
         </div>

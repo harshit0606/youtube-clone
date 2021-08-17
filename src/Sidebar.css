@@ -1,12 +1,48 @@
+.parent_header{
+  position: sticky;
+  top:0;
+  z-index: 60;
+}
+
 .sidebar{
     
     width: 16%;
-    position:sticky;
-   top:60px;
-    z-index: 50;
+    position:fixed;
+    top:60px;
+    z-index: 500;
     height: 92vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    left:0;
+   transition: 0.5s ease;
+   background-color: white;
+    
+}
+.miniDiv{
+  padding:10px 0px;
+  text-align: center;
+  font-size: 10px;
+  color: rgb(112,112,112);
+}
+.miniDiv:hover{
+  background-color: lightgrey;
+}
+.sidebar_mini{
+  width: 5%;
+  position:fixed;
+  top:90px;
+  z-index: 50;
+  height: 92vh;
+  background-color: white;
+  left:-100px;
+  transition: 0.5s ease;
+}
+.sidebar_mini.active{
+  left:0px;
+}
+.sidebar.active{
+  
+  left:-16%;
 }
 .sidebar hr{
     height:1px; 
