@@ -4,16 +4,29 @@ import Header from "./Header";
 import Recommended from './Recommended';
 import Sidebar from "./Sidebar";
 import HomePage from "./HomePage";
+import SearchPage from "./SearchPage";
+import {BrowserRouter as Router,Switch,Route}from  "react-router-dom"
 
 
 
 function App() {
-  
+  const [coll,setColl]=useState(false);
 
   return (
     <div className="App">
-      <Header/>
-      <HomePage/>
+    
+    <Router>
+    <Header coll={coll} setColl={setColl}/>
+    <Switch>
+    <Route path="/search/:searchTerm" component={SearchPage }></Route>
+    <Route path="/" ><HomePage coll={coll} setColl={setColl}/></Route>
+    
+    
+    </Switch>
+    </Router>
+
+      
+      
       
       
     </div>
