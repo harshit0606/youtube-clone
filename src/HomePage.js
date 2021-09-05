@@ -1,10 +1,29 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "./HomePage.css";
 import Tags from "./components/Tags"
 import VideoCard from './components/VideoCard';
 
-function HomePage() {
+function HomePage(props) {
+    const homePage=document.querySelector(".homepage");
+    if(homePage){
+        if(props.coll==true){
+            homePage.classList.add('full_width');
+        }
+        else if(props.coll==false){
+            homePage.classList.remove('full_width');
+        }
+
+    }
+    useEffect(()=>{
+
+    },[props.col]);
+    
+
+
     return (
+        
+
+
         <div className="homepage">
             <Tags/>
             <VideoCard 

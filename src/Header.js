@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useState} from 'react'
 //lets import the icons which we will be using in our project from material-ui
 import MenuIcon from "@material-ui/icons/Menu";
 import YtLogo from "./svg/ytLogo.png";
@@ -19,6 +19,7 @@ import VideoLibraryIcon  from '@material-ui/icons/VideoLibrary';
 import { History,OndemandVideo,WatchLater,ThumbUp,ExpandMoreOutlined,YouTube,Theaters,SportsEsports,Settings,Flag,Help,Feedback } from '@material-ui/icons';
 import "./Sidebar.css"
 import SubscriptionRow from "./components/SubscriptionRow"
+import {Link} from "react-router-dom";
 
 
 //We'll be creating three different section of the Header left middle and right
@@ -33,8 +34,10 @@ import SubscriptionRow from "./components/SubscriptionRow"
 
 
 
-function Header() {
+function Header(props) {
     
+    const [searchval,setSearchVal]= useState("");
+
 
    
 
@@ -42,7 +45,12 @@ function Header() {
         const sidebar= document.querySelector(".sidebar");
         const sidebar_mini=document.querySelector(".sidebar_mini");
         const video=document.querySelector(".recommended");
-
+        if(props.coll==true){
+            props.setColl(false);
+        }
+        else{
+            props.setColl(true);
+        }
         console.log(sidebar);
         if(sidebar)
         sidebar.classList.toggle('active');
@@ -64,9 +72,12 @@ function Header() {
         </div>
         <div className="header_input">
             <div className="header__middle">
-            <input className="SearchInput" placeholder="Search" type="text"/>
-        <SearchIcon className="header_searchBtn"/>
             
+            <input className="SearchInput" placeholder="Search" onChange={(e)=>setSearchVal(e.target.value)} type="text" value={searchval}/>
+           
+        <Link to ={`/search/${searchval}`}>  
+        <SearchIcon className="header_searchBtn"/>
+        </Link>
             </div>
             <Microphone className="header__icons"/>
         </div>
