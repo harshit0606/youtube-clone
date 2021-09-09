@@ -5,18 +5,21 @@ import VideoCard from './components/VideoCard';
 
 function HomePage(props) {
     const homePage=document.querySelector(".homepage");
+    const video=document.querySelector(".videoSection");
     if(homePage){
         if(props.coll==true){
             homePage.classList.add('full_width');
+            video.classList.add('full_width');
         }
         else if(props.coll==false){
             homePage.classList.remove('full_width');
+            video.classList.remove('full_width');
         }
 
     }
     useEffect(()=>{
 
-    },[props.col]);
+    },[props.coll]);
     
 
 
@@ -26,6 +29,7 @@ function HomePage(props) {
 
         <div className="homepage">
             <Tags/>
+            <div className="videoSection">
             <VideoCard 
             thumbnail="https://i.ytimg.com/vi/vD1nv-I5JhU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCwmsC31vXoDbyq6DJUh4JbSozixQ"
             duration="15:07"
@@ -34,6 +38,7 @@ function HomePage(props) {
             title="React JS Netflix Clone Tutorial | #5-Homepage Component"
             views="200 views"
             time="1 week ago"
+            coll={props.coll}
             />
             <VideoCard 
             thumbnail="https://i.ytimg.com/vi/X49GcTtLxhY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBF7M8SEBk6eTrwdsuoZXTrbCHxow"
@@ -43,6 +48,7 @@ function HomePage(props) {
             title="HTML & CSS Tutorial | Card UI Tutorial - Web Design Tutorial"
             views="210 views"
             time="1 month ago"
+            coll={props.coll}
             />
             <VideoCard 
             thumbnail="https://i.ytimg.com/vi/5ecoM_jEUuk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC_h5PbtphpV2_mAuYR_kT3WCEPqg"
@@ -52,6 +58,7 @@ function HomePage(props) {
             title="Websites for UI/UX Inspirations | HTML & CSS Design"
             views="70 views"
             time="2 week ago"
+            coll={props.coll}
             />
             <VideoCard 
             thumbnail="https://i.ytimg.com/vi/vD1nv-I5JhU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCwmsC31vXoDbyq6DJUh4JbSozixQ"
@@ -61,6 +68,7 @@ function HomePage(props) {
             title="React JS Netflix Clone Tutorial | #2-Footer Component"
             views="158 views"
             time="2 week ago"
+            coll={props.coll}
             />
 
             <VideoCard 
@@ -71,6 +79,7 @@ function HomePage(props) {
             title="HTML & CSS Tutorial | Card UI Tutorial - Web Design Tutorial"
             views="190 views"
             time="3 week ago"
+            coll={props.coll}
             />
             <VideoCard 
             thumbnail="https://i.ytimg.com/vi/LqpIt3mqcz0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCUbsVxNtgYjEx02VI3CR1uhF-vjw"
@@ -80,6 +89,7 @@ function HomePage(props) {
             title="ReactJS Firebase Authentication Tutorial"
             views="147 views"
             time="1 month ago"
+            coll={props.coll}
             />
             <VideoCard 
             thumbnail="https://i.ytimg.com/vi/vD1nv-I5JhU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCwmsC31vXoDbyq6DJUh4JbSozixQ"
@@ -89,6 +99,7 @@ function HomePage(props) {
             title="React JS Netflix Clone Tutorial | #5-Homepage Component"
             views="200 views"
             time="1 week ago"
+            coll={props.coll}
             />
             <VideoCard 
             thumbnail="https://i.ytimg.com/vi/vD1nv-I5JhU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCwmsC31vXoDbyq6DJUh4JbSozixQ"
@@ -98,6 +109,7 @@ function HomePage(props) {
             title="React JS Netflix Clone Tutorial | #5-Homepage Component"
             views="200 views"
             time="1 week ago"
+            coll={props.coll}
             />
             <VideoCard 
             thumbnail="https://i.ytimg.com/vi/X49GcTtLxhY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBF7M8SEBk6eTrwdsuoZXTrbCHxow"
@@ -107,7 +119,9 @@ function HomePage(props) {
             title="HTML & CSS Tutorial | Card UI Tutorial - Web Design Tutorial"
             views="210 views"
             time="1 month ago"
+            coll={props.coll}
             />
+            </div>
         </div>
     )
 }

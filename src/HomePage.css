@@ -6,4 +6,13 @@
 }
 .homepage.full_width{
     margin-left: 5%;
+    
+}
+.videoSection{
+    display: flex;
+    flex-wrap: wrap;
+}
+.videoSection.full_width{
+    padding-left: 50px;
+
 }

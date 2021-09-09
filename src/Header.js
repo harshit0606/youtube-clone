@@ -68,7 +68,9 @@ function Header(props) {
         <div className="header">
         <div className="header__left">
         <div onClick={toggleSidebar}><MenuIcon id="burger"/></div>
+        <Link to ="/">
         <img className="header__logo" src={YtLogo}/>
+        </Link>
         </div>
         <div className="header_input">
             <div className="header__middle">
