@@ -5,6 +5,10 @@
     margin-right: 2px;
     margin-left: 18px;
 }
+.videoCard.fullWidth{
+    margin-right: 12px;
+    margin-left: 28px;
+}
 .videoImg{
     height:162px;
     width:295px;

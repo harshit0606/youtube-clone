@@ -10,6 +10,16 @@ import {Avatar} from "@material-ui/core";
 //So you can pause the video and can make the necessary changes
 
 function VideoCard(props) {
+    const homePage=document.querySelector(".videoCard");
+    if(homePage){
+        if(props.coll==true){
+            homePage.classList.add('full_width');
+        }
+        else if(props.coll==false){
+            homePage.classList.remove('full_width');
+        }
+
+    }
     return (
         <div className="videoCard">
         <div className="watchLater"><WatchLater className="videoIcon"/></div>

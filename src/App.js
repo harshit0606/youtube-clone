@@ -18,7 +18,7 @@ function App() {
     <Router>
     <Header coll={coll} setColl={setColl}/>
     <Switch>
-    <Route path="/search/:searchTerm" component={SearchPage }></Route>
+    <Route path="/search/:searchTerm"><SearchPage coll={coll} setColl={setColl}/></Route>
     <Route path="/" ><HomePage coll={coll} setColl={setColl}/></Route>
     
     

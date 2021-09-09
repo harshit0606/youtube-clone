@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "./SearchPage.css";
 import{TuneOutlined} from "@material-ui/icons"
 import ChannelTile from './components/ChannelTile';
@@ -6,7 +6,22 @@ import VideoTile from "./components/VideoTile";
 import Thumbnail4 from "./svg/thumbnail4.png";
 import Thumbnail3 from "./svg/thumbnail3.png";
 import Thumbnail2 from "./svg/thumbnail2.png";
-function SearchPage() {
+function SearchPage(props) {
+
+    const homePage=document.querySelector(".searchPage");
+    if(homePage){
+        if(props.coll==true){
+            homePage.classList.add('full_width');
+        }
+        else if(props.coll==false){
+            homePage.classList.remove('full_width');
+        }
+
+    }
+    useEffect(()=>{
+
+    },[props.coll]);
+
     return (
         <div className="searchPage">
         <div className="filter">
