@@ -20,7 +20,7 @@ import { History,OndemandVideo,WatchLater,ThumbUp,ExpandMoreOutlined,YouTube,The
 import "./Sidebar.css"
 import SubscriptionRow from "./components/SubscriptionRow"
 import {Link} from "react-router-dom";
-
+import { useHistory} from "react-router-dom";
 
 //We'll be creating three different section of the Header left middle and right
 //in the left will be the menu button and the youtube logo
@@ -36,6 +36,7 @@ import {Link} from "react-router-dom";
 
 function Header(props) {
     
+    let history=useHistory();
     const [searchval,setSearchVal]= useState("");
 
 
@@ -62,6 +63,10 @@ function Header(props) {
         }
     }
     
+    function handleSearch(e){
+        e.preventDefault();
+        history.push( `/search/${searchval}`);
+    }
     
     return (
         <div className="parent_header">
@@ -74,12 +79,13 @@ function Header(props) {
         </div>
         <div className="header_input">
             <div className="header__middle">
-            
+            <form style={{widht:"100%",display:"flex",alignItems:"center"}} onSubmit={handleSearch}>
             <input className="SearchInput" placeholder="Search" onChange={(e)=>setSearchVal(e.target.value)} type="text" value={searchval}/>
-           
+            
         <Link to ={`/search/${searchval}`}>  
         <SearchIcon className="header_searchBtn"/>
         </Link>
+        </form>
             </div>
             <Microphone className="header__icons"/>
         </div>
